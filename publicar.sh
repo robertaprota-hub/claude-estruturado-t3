@@ -17,6 +17,6 @@ git add -A
 git commit -m "${MSG} (cache v${NOVA})"
 git push origin main
 
-REPO=$(basename "$(git rev-parse --show-toplevel)")
+REPO=$(basename -s .git "$(git remote get-url origin)")
 echo "publicado. o Pages atualiza em 1-2 minutos:"
 echo "https://robertaprota-hub.github.io/${REPO}/"
