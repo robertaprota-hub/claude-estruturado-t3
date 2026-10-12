@@ -9,5 +9,5 @@ Quatro abas: **Gravações · Slides · Arquivos · Semana** (próxima aula, Mee
 
 ## Rotina pós-aula
 
-1. Abrir `curso.js`, colar o link da gravação e do PDF na aula, escrever a `tarefa`, listar os `arquivos`.
+1. Abrir `curso.js`, colar o link da gravação e do PDF na aula, escrever a `tarefa`, listar os `arquivos`. A `pasta` da aula no Drive já está preenchida.
 2. `./publicar.sh "aula 01: links e tarefa"`.

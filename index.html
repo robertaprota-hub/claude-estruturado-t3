@@ -113,6 +113,13 @@
   .aula.soon,.file.soon{opacity:.62}
 
   /* slides e arquivos */
+  .mat-rows{margin-top:12px;border-top:1px solid var(--line)}
+  .mat-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--graphite);font-size:14.5px;font-weight:500}
+  .mat-row:last-child{border-bottom:0}
+  .mat-row .icon{color:var(--saddle)}
+  .mat-row.off{color:var(--steel)}
+  .mat-row .ok{color:var(--ochre);margin-left:auto}
+  .mat-row .pill{margin-left:auto}
   .file{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;min-height:56px}
   .file:last-child{border-bottom:0}
   .file .icon{color:var(--saddle)}
@@ -195,17 +202,24 @@
 
   <!-- SLIDES -->
   <section class="view" data-view="slides">
-    <header class="head light">
+    <header class="head">
       <div class="head-inner">
         <div class="brand"><span class="prota" role="img" aria-label="prota.ia"></span><span class="turma-chip"><span class="dot"></span><span data-turma></span></span></div>
         <div class="kicker" data-kicker-slides>apresentações</div>
         <h1>Slides</h1>
-        <p class="editorial">O PDF de cada aula, logo depois do encontro.</p>
+        <p class="editorial">Apresentação e arquivos de cada aula.</p>
       </div>
     </header>
     <div class="content">
-      <div class="card" style="padding-top:2px;padding-bottom:2px" id="slidesList"></div>
-      <div class="row" style="justify-content:center"><a class="link" id="slidesPasta" href="#" target="_blank" rel="noopener">abrir a pasta de apresentações no Drive</a></div>
+      <div id="slidesList" style="display:flex;flex-direction:column;gap:12px"></div>
+      <div class="card dark">
+        <div class="row" style="gap:14px">
+          <div class="drive-ic"><svg class="icon"><use href="#i-folder"/></svg></div>
+          <div class="grow"><div class="kicker">pasta da turma</div><div class="title" style="font-size:18px;margin-top:2px">Pasta do curso no Drive</div></div>
+        </div>
+        <p style="margin:12px 0 14px;font-size:13.5px">Gravações, apresentações e arquivos de cada aula.</p>
+        <div class="row" style="gap:10px;flex-wrap:wrap"><a class="btn primary" id="slidesPasta" href="#" target="_blank" rel="noopener">Abrir no Drive</a><button class="btn neon" data-copy="drive"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button></div>
+      </div>
       <div class="credit">curso conduzido por prota.ia</div>
     </div>
   </section>
@@ -217,7 +231,7 @@
         <div class="brand"><span class="prota" role="img" aria-label="prota.ia"></span><span class="turma-chip"><span class="dot"></span><span data-turma></span></span></div>
         <div class="kicker">prompts, skills e templates</div>
         <h1>Arquivos</h1>
-        <p class="editorial">Tudo o que foi mostrado em aula, pronto para copiar.</p>
+        <p class="editorial">Arquivos mostrados em aula.</p>
       </div>
     </header>
     <div class="content">
@@ -226,11 +240,11 @@
           <div class="drive-ic"><svg class="icon"><use href="#i-folder"/></svg></div>
           <div class="grow"><div class="kicker">pasta da turma</div><div class="title" style="font-size:18px;margin-top:2px">Pasta do curso no Drive</div></div>
         </div>
-        <p style="margin:12px 0 14px;font-size:13.5px">Gravações, apresentações e arquivos de cada aula, numa pasta só.</p>
-        <div class="row" style="gap:10px;flex-wrap:wrap"><a class="btn primary" id="driveBtn" href="#" target="_blank" rel="noopener">Abrir no Drive</a><button class="btn neon" data-copy="drive"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>copiar link</button></div>
+        <p style="margin:12px 0 14px;font-size:13.5px">Gravações, apresentações e arquivos de cada aula.</p>
+        <div class="row" style="gap:10px;flex-wrap:wrap"><a class="btn primary" id="driveBtn" href="#" target="_blank" rel="noopener">Abrir no Drive</a><button class="btn neon" data-copy="drive"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button></div>
       </div>
       <div id="arquivosList" class="grupo"></div>
-      <p class="note" id="arquivosNota">Os arquivos de cada aula entram aqui depois do encontro.</p>
+      <p class="note" id="arquivosNota">Em breve.</p>
       <div class="credit">curso conduzido por prota.ia</div>
     </div>
   </section>
@@ -252,19 +266,19 @@
         <div class="when" id="nextWhen"></div>
         <div class="row" style="gap:10px;flex-wrap:wrap;margin-top:4px">
           <a class="btn reverse" id="meetBtn" href="#" target="_blank" rel="noopener"><svg class="icon"><use href="#i-video"/></svg>Entrar no Meet</a>
-          <button class="btn neon" data-copy="meet"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>copiar link</button>
+          <button class="btn neon" data-copy="meet"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button>
         </div>
-        <div class="meta">a mesma sala nas 4 aulas</div>
+        <div class="meta">A mesma sala nas 4 aulas.</div>
       </div>
 
       <div class="card tarefa">
         <div class="row" style="gap:10px"><svg class="icon" style="color:var(--ochre)"><use href="#i-task"/></svg><div class="kicker" id="tarefaKicker">tarefa da semana</div></div>
         <div class="title" style="font-size:16px;margin-top:8px" id="tarefaTitulo"></div>
         <div class="body" id="tarefaBody"></div>
-        <div class="meta">sem entrega. é treino para a semana.</div>
+        <div class="meta">Sem entrega.</div>
       </div>
 
-      <button class="btn ghost full" id="icsAll"><svg class="icon"><use href="#i-cal"/></svg>adicionar as aulas à minha agenda</button>
+      <button class="btn ghost full" id="icsAll"><svg class="icon"><use href="#i-cal"/></svg>Adicionar as aulas à agenda</button>
       <div class="card" style="padding-top:2px;padding-bottom:2px" id="agendaList"></div>
       <div class="credit">curso conduzido por prota.ia</div>
     </div>
@@ -277,7 +291,7 @@
     <button class="tab" data-tab="semana"><svg class="icon"><use href="#i-cal"/></svg>semana</button>
   </nav>
 
-  <div class="toast" id="toast">copiado</div>
+  <div class="toast" id="toast">Copiado</div>
 </div>
 
 <script src="curso.js"></script>
@@ -308,9 +322,9 @@ $('[data-kicker-slides]').textContent='apresentações · '+AULAS.length+' aulas
 $('#semanaKicker').textContent=C.diaSemana+' · '+C.hora+' às '+fim()+' · online';
 $('#meetBtn').href=C.meet||'#';
 $('#driveBtn').href=C.drive||'#';
-$('#slidesPasta').href=C.pastaSlides||C.drive||'#';
-if(!C.drive){$('#driveBtn').addEventListener('click',e=>{e.preventDefault();toast('pasta em breve');});}
-if(!C.pastaSlides&&!C.drive){$('#slidesPasta').addEventListener('click',e=>{e.preventDefault();toast('pasta em breve');});}
+$('#slidesPasta').href=C.drive||'#';
+if(!C.drive){$('#driveBtn').addEventListener('click',e=>{e.preventDefault();toast('Pasta em breve');});}
+if(!C.drive){$('#slidesPasta').addEventListener('click',e=>{e.preventDefault();toast('Pasta em breve');});}
 
 /* ===== gravações ===== */
 function renderAulas(){
@@ -324,9 +338,9 @@ function renderAulas(){
     el.addEventListener('click',e=>{
       if(e.target.closest('[data-check]')){ e.stopPropagation(); const i=assistidas.indexOf(a.num); i>=0?assistidas.splice(i,1):assistidas.push(a.num); salvar(); renderAulas(); return; }
       if(live){ abrir(C.meet); return; }
-      if(futura){ toast('disponível após a aula'); return; }
+      if(futura){ toast('Disponível após a aula'); return; }
       const u=a.gravacao||C.pastaGravacoes||C.drive;
-      if(!u){ toast('gravação em breve'); return; }
+      if(!u){ toast('Gravação em breve'); return; }
       if(!assistidas.includes(a.num)){ assistidas.push(a.num); salvar(); }
       abrir(u); renderAulas();
     });
@@ -340,12 +354,19 @@ function renderAulas(){
 function renderSlides(){
   const box=$('#slidesList'); box.innerHTML='';
   AULAS.forEach(a=>{
-    const p=partes(a.data), futura=a.data>hojeISO, u=a.slides||C.pastaSlides||C.drive;
-    const el=document.createElement(futura||!u?'div':'a'); el.className='file'+(futura?' soon':'');
-    if(!futura&&u){el.href=u;el.target='_blank';el.rel='noopener';}
-    else if(!futura){el.style.cursor='pointer';el.addEventListener('click',()=>toast('slides em breve'));}
-    el.innerHTML=`<div class="num">${a.num}</div><div class="grow"><div class="t">${esc(a.titulo)}</div><div class="s">${p.dow}, ${p.dd}/${String(p.m).padStart(2,'0')}${a.slides?' · pdf':''}</div></div>${futura?'<span class="pill breve">após a aula</span>':'<svg class="icon go"><use href="#i-ext"/></svg>'}`;
-    box.appendChild(el);
+    const p=partes(a.data), futura=a.data>hojeISO, dia=p.dd+'/'+String(p.m).padStart(2,'0'), pdf=a.slides||'', pasta=a.pasta||'';
+    const card=document.createElement('div'); card.className='card aula-mat'+(futura?' soon':'');
+    let rows='';
+    if(!futura){
+      rows+= pdf
+        ? `<a class="mat-row" href="${esc(pdf)}" target="_blank" rel="noopener"><svg class="icon"><use href="#i-slides"/></svg><span class="grow">Apresentação</span><span class="ok"><svg class="icon"><use href="#i-check"/></svg></span></a>`
+        : `<div class="mat-row off"><svg class="icon"><use href="#i-slides"/></svg><span class="grow">Apresentação</span><span class="pill breve">em breve</span></div>`;
+      rows+= pasta
+        ? `<a class="mat-row" href="${esc(pasta)}" target="_blank" rel="noopener"><svg class="icon"><use href="#i-folder"/></svg><span class="grow">Arquivos da aula</span><span class="ok"><svg class="icon"><use href="#i-check"/></svg></span></a>`
+        : `<div class="mat-row off"><svg class="icon"><use href="#i-folder"/></svg><span class="grow">Arquivos da aula</span><span class="pill breve">em breve</span></div>`;
+    }
+    card.innerHTML=`<div class="row"><div class="num">${a.num}</div><div class="grow"><div class="title">${esc(a.titulo)}</div><div class="meta">aula ${a.num} · ${p.dow}, ${dia} · ${C.hora}</div></div>${futura?'<span class="pill breve">em breve</span>':''}</div>${rows?`<div class="mat-rows">${rows}</div>`:''}`;
+    box.appendChild(card);
   });
 }
 
@@ -360,7 +381,7 @@ function renderArquivos(){
     g.innerHTML=`<div class="section-label"><span class="kicker">aula ${a.num} · ${esc(a.titulo)}</span><small>${p.dd}/${String(p.m).padStart(2,'0')}</small></div><div class="card" style="padding-top:2px;padding-bottom:2px"></div>`;
     const card=g.querySelector('.card');
     itens.forEach(it=>{
-      const u=it.url||C.pastaArquivos||C.drive, el=document.createElement(u?'a':'div'); el.className='file';
+      const u=it.url||a.pasta||C.pastaArquivos||C.drive, el=document.createElement(u?'a':'div'); el.className='file';
       if(u){el.href=u;el.target='_blank';el.rel='noopener';}
       el.innerHTML=`<svg class="icon"><use href="#${ICONE[it.tipo]||'i-file'}"/></svg><div class="grow"><div class="t">${esc(it.nome)}${it.tipo?`<span class="tag">${esc(it.tipo)}</span>`:''}</div>${it.desc?`<div class="s">${esc(it.desc)}</div>`:''}</div><svg class="icon go"><use href="#i-ext"/></svg>`;
       card.appendChild(el);
@@ -378,13 +399,13 @@ function renderSemana(){
   $('#nextTitle').textContent='Aula '+ref.num+' · '+ref.titulo;
   $('#nextWhen').textContent=pp.dow+', '+pp.dd+' de '+pp.mesL+' · '+C.hora+' às '+fim();
 
-  if(!ult){ $('#tarefaKicker').textContent='tarefa da semana'; $('#tarefaTitulo').textContent='Antes da aula 01'; const b=$('#tarefaBody'); b.className='body empty'; b.textContent='A primeira tarefa entra aqui depois do encontro de '+partes(AULAS[0].data).dd+' de '+partes(AULAS[0].data).mesL+'.'; }
+  if(!ult){ $('#tarefaKicker').textContent='tarefa da semana'; $('#tarefaTitulo').textContent='Aula '+AULAS[0].num+' · '+AULAS[0].titulo; const b=$('#tarefaBody'); b.className='body empty'; b.textContent='Em breve.'; }
   else { $('#tarefaKicker').textContent='tarefa da semana · aula '+ult.num; $('#tarefaTitulo').textContent=ult.titulo; const b=$('#tarefaBody'); if(ult.tarefa){b.className='body';b.textContent=ult.tarefa;} else {b.className='body empty';b.textContent='Em breve.';} }
 
   const box=$('#agendaList'); box.innerHTML='';
   AULAS.forEach(a=>{const p=partes(a.data),live=a.data===hojeISO,past=a.data<hojeISO;
     const el=document.createElement('div'); el.className='ev';
-    el.innerHTML=`<div class="date ${live?'live':past?'past':''}"><div class="m">${p.mes}</div><div class="d">${p.dd}</div></div><div class="grow"><div class="title" style="font-size:15px">${esc(a.titulo)}</div><div class="meta">aula ${a.num} · ${p.dow} · ${C.hora}${live?' · hoje':''}</div></div><button class="btn ghost" data-ics="${a.num}">agendar</button>`;
+    el.innerHTML=`<div class="date ${live?'live':past?'past':''}"><div class="m">${p.mes}</div><div class="d">${p.dd}</div></div><div class="grow"><div class="title" style="font-size:15px">${esc(a.titulo)}</div><div class="meta">aula ${a.num} · ${p.dow} · ${C.hora}${live?' · hoje':''}</div></div><button class="btn ghost" data-ics="${a.num}">Agendar</button>`;
     el.querySelector('[data-ics]').addEventListener('click',()=>baixarIcs([a],'claude-estruturado-'+C.slug+'-aula-'+a.num));
     box.appendChild(el);
   });
@@ -401,7 +422,7 @@ $('#icsAll').addEventListener('click',()=>baixarIcs(AULAS,'claude-estruturado-'+
 /* ===== UI ===== */
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1800);}
 $$('.tab').forEach(b=>b.addEventListener('click',()=>{$$('.tab').forEach(x=>x.classList.toggle('active',x===b));$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===b.dataset.tab));$('.view.active').scrollTop=0;}));
-$$('[data-copy]').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.copy==='meet'?C.meet:C.drive; if(!v){toast('link em breve');return;} const ok=()=>toast('link copiado'); if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(ok).catch(()=>{prompt('copiar',v);}); else prompt('copiar',v);}));
+$$('[data-copy]').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.copy==='meet'?C.meet:C.drive; if(!v){toast('Link em breve');return;} const ok=()=>toast('Link copiado'); if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(ok).catch(()=>{prompt('copiar',v);}); else prompt('copiar',v);}));
 
 renderAulas(); renderSlides(); renderArquivos(); renderSemana();
 if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
