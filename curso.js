@@ -17,10 +17,10 @@ window.CURSO = {
   meet: 'https://meet.google.com/gbr-ihet-xwv',   // a mesma sala nas 4 aulas
 
   /* Drive da turma. Sem link nas subpastas, o app abre a pasta principal. */
-  drive: '',
-  pastaGravacoes: '',
-  pastaSlides: '',
-  pastaArquivos: ''
+  drive: 'https://drive.google.com/drive/folders/1Br8l-WPIb39bvScGEzqnAuPMwsbAcvWq',
+  pastaGravacoes: 'https://drive.google.com/drive/folders/1cHjjzK1wS6t5j60g_c6NRpRcRhRLtDpr',
+  pastaSlides: 'https://drive.google.com/drive/folders/1LrFE3wqZ6KUGLg7OvW1tKWPINDtF9_Tk',
+  pastaArquivos: 'https://drive.google.com/drive/folders/1iRGRtzCsyQ4eDDe0JLLmz0-bflMzMyZ8'
 };
 
 /* Uma entrada por aula. Campos:
