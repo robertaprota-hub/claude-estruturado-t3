@@ -6,7 +6,7 @@ window.CURSO = {
   slug: 't3',
   nome: 'Claude Estruturado',
   turma: 'Turma 3',
-  linha: 'IA estruturada, aplicada no dia a dia.',
+  linha: 'Pessoas como protagonistas na era da IA.',   // frase da marca, embaixo da logo
   diaSemana: 'terças',
   diaCurto: 'ter',
   hora: '20h00',
