@@ -44,13 +44,13 @@
   .shell{position:fixed;inset:0;max-width:520px;margin:0 auto;display:flex;flex-direction:column;background:var(--bone);overflow:hidden}
   .view{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;display:none;flex-direction:column}
   .view.active{display:flex}
-  .head{flex:0 0 auto;padding:calc(env(safe-area-inset-top,20px) + 24px) 22px 22px;background:var(--coffee);color:var(--bone);position:relative;overflow:hidden}
+  .head{flex:0 0 auto;padding:calc(env(safe-area-inset-top,20px) + 16px) 20px 16px;background:var(--coffee);color:var(--bone);position:relative;overflow:hidden}
   .head::after{content:"";position:absolute;right:-110px;top:-110px;width:320px;height:320px;background:var(--glow);pointer-events:none}
   .head.light{background:var(--cream);color:var(--graphite)}
   .head.light::after{display:none}
-  .head-inner{position:relative;display:flex;flex-direction:column;gap:10px}
+  .head-inner{position:relative;display:flex;flex-direction:column;gap:8px}
   .brand{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .prota{width:113px;height:44px;background:var(--prota-on-dark) no-repeat left center/contain;flex:0 0 auto}
+  .prota{width:98px;height:38px;background:var(--prota-on-dark) no-repeat left center/contain;flex:0 0 auto}
   .head.light .prota{background-image:var(--prota-on-light)}
   .turma-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-on-dark);border-radius:99px;padding:6px 12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--bone);min-height:32px}
   .turma-chip .dot{width:8px;height:8px;border-radius:50%;background:var(--neon)}
@@ -59,15 +59,15 @@
   .kicker{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:lowercase;color:var(--saddle)}
   .head .kicker{color:var(--neon)}
   .head.light .kicker{color:var(--saddle)}
-  h1{font-family:var(--font-display);font-weight:700;font-size:30px;line-height:1.05;letter-spacing:-.025em;margin:0;text-wrap:balance}
+  h1{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.05;letter-spacing:-.025em;margin:0;text-wrap:balance}
   .head.light h1{color:var(--coffee)}
   .editorial{font-family:var(--font-editorial);font-style:italic;font-weight:400;font-size:15.5px;line-height:1.4;color:var(--cream);margin:0}
   .head.light .editorial{color:var(--saddle)}
 
-  .content{flex:0 0 auto;padding:18px 22px 28px;display:flex;flex-direction:column;gap:12px}
+  .content{flex:1 0 auto;padding:14px 20px 16px;display:flex;flex-direction:column;gap:10px}
   .section-label{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:6px;flex-wrap:wrap}
   .section-label small{font-family:var(--font-mono);font-size:11.5px;color:var(--steel)}
-  .card{background:var(--bone);border:1px solid var(--line);border-radius:20px;padding:14px 18px;box-shadow:var(--shadow)}
+  .card{background:var(--bone);border:1px solid var(--line);border-radius:18px;padding:12px 16px;box-shadow:var(--shadow)}
   .card.dark{background:var(--coffee);color:var(--bone);border:0;position:relative;overflow:hidden}
   .card.dark::after{content:"";position:absolute;left:-120px;bottom:-120px;width:300px;height:300px;background:var(--glow);pointer-events:none}
   .card.dark>*{position:relative}
@@ -94,7 +94,7 @@
   .link:hover{border-bottom-color:var(--ochre)}
   .icon{width:20px;height:20px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
   .note{font-family:var(--font-mono);font-size:11.5px;color:var(--steel);line-height:1.55;margin:0}
-  .credit{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-mono);font-size:11px;color:var(--steel);letter-spacing:.06em;padding-top:8px}
+  .credit{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-mono);font-size:11px;color:var(--steel);letter-spacing:.06em;margin-top:auto;padding-top:4px}
 
   /* gravações */
   .progress{display:flex;flex-direction:column;gap:8px}
@@ -104,7 +104,7 @@
   .track i{display:block;height:100%;background:var(--ochre);border-radius:99px;transition:width 200ms cubic-bezier(.2,.6,.2,1)}
   .aula{cursor:pointer;transition:box-shadow 200ms}
   .aula:hover{box-shadow:var(--shadow-2)}
-  .num{width:42px;height:42px;border-radius:50%;background:var(--cream);color:var(--coffee);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-weight:500;font-size:14px;flex:0 0 auto}
+  .num{width:40px;height:40px;border-radius:50%;background:var(--cream);color:var(--coffee);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-weight:500;font-size:14px;flex:0 0 auto}
   .num.live{background:var(--ochre);color:var(--bone)}
   .num .icon{width:18px;height:18px}
   .check{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--saddle);display:flex;align-items:center;justify-content:center;color:transparent;flex:0 0 auto;transition:background 120ms}
@@ -113,40 +113,76 @@
   .aula.soon,.file.soon{opacity:.62}
 
   /* slides e arquivos */
-  .mat-rows{margin-top:12px;border-top:1px solid var(--line)}
-  .mat-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--graphite);font-size:14.5px;font-weight:500}
-  .mat-row:last-child{border-bottom:0}
-  .mat-row .icon{color:var(--saddle)}
-  .mat-row.off{color:var(--steel)}
-  .mat-row .ok{color:var(--ochre);margin-left:auto}
-  .mat-row .pill{margin-left:auto}
-  .file{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;min-height:56px}
+  .file{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;min-height:46px}
   .file:last-child{border-bottom:0}
   .file .icon{color:var(--saddle)}
   .file .go{color:var(--ochre);margin-left:auto}
   .file .t{font-weight:500;font-size:15px;color:var(--graphite)}
   .file .s{font-family:var(--font-mono);font-size:11px;color:var(--steel);margin-top:2px}
   .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;color:var(--saddle);background:var(--cream);border-radius:99px;padding:2px 7px;margin-left:6px;vertical-align:middle}
-  .drive-ic{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--neon),var(--ochre));color:var(--coffee);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .drive-ic{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--neon),var(--ochre));color:var(--coffee);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
   .drive-ic .icon{width:22px;height:22px;stroke-width:2}
   .grupo{display:flex;flex-direction:column}
   .grupo .section-label{margin-top:10px;margin-bottom:2px}
 
   /* semana */
-  .next{display:flex;flex-direction:column;gap:10px}
+  .next{display:flex;flex-direction:column;gap:8px}
   .next .when{font-family:var(--font-mono);font-size:12.5px;color:var(--head-muted)}
   .tarefa{border-left:3px solid var(--ochre);background:var(--cream);border-color:transparent;border-left-color:var(--ochre)}
-  .tarefa .body{font-size:15px;line-height:1.5;color:var(--graphite);margin:6px 0 4px;white-space:pre-line}
-  .tarefa .body.empty{font-family:var(--font-editorial);font-style:italic;color:var(--saddle)}
-  .ev{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
-  .ev:last-child{border-bottom:0}
-  .date{width:54px;flex:0 0 auto;text-align:center;border-radius:12px;padding:6px 0;background:var(--cream)}
+  .tarefa .top{display:flex;align-items:center;gap:10px}
+  .tarefa .top .icon{color:var(--ochre)}
+  .tarefa .pill{margin-left:auto;background:var(--bone);color:var(--saddle)}
+  .tarefa .body{font-size:14px;line-height:1.45;color:var(--graphite);margin:6px 0 0;white-space:pre-line}
+  .cal{flex:1 0 auto;max-height:340px;display:flex;flex-direction:column;padding-top:8px;padding-bottom:4px}
+  .cal .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .cal .add{display:inline-flex;align-items:center;gap:6px;min-height:34px;font-family:var(--font-mono);font-size:12px;color:var(--saddle)}
+  .cal .add .icon{width:15px;height:15px;color:var(--ochre)}
+  #agendaList{flex:1 0 auto;display:flex;flex-direction:column}
+  .ev{flex:1 0 auto;display:flex;align-items:center;gap:12px;padding:5px 0;border-top:1px solid var(--line)}
+  .ev .title{font-size:14.5px}
+  .ev .meta{margin-top:1px}
+  .date{width:46px;flex:0 0 auto;text-align:center;border-radius:10px;padding:4px 0;background:var(--cream)}
   .date .m{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:lowercase;color:var(--saddle)}
-  .date .d{font-family:var(--font-display);font-weight:700;font-size:21px;line-height:1.05;color:var(--coffee);font-variant-numeric:tabular-nums}
+  .date .d{font-family:var(--font-display);font-weight:700;font-size:17px;line-height:1.05;color:var(--coffee);font-variant-numeric:tabular-nums}
   .date.live{background:var(--ochre)}
   .date.live .m,.date.live .d{color:var(--bone)}
   .date.past{opacity:.55}
-  .ev .btn{min-height:38px;padding:0 12px;font-size:13px}
+
+  /* listas que ocupam a altura da tela, sem rolagem */
+  .fill{flex:1 0 auto;display:flex;flex-direction:column;gap:10px}
+  .fill>.card{flex:1 0 auto;max-height:128px;padding-top:11px;padding-bottom:11px}
+  .mat{display:flex;flex-direction:column;justify-content:center}
+  .fill .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:3px}
+  .sub{font-family:var(--font-mono);font-size:11.5px;color:var(--steel);line-height:1.45;margin-top:3px}
+  .chips{display:flex;gap:8px;margin-top:7px}
+  .chip{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 12px;border-radius:99px;border:1px solid var(--line-strong);font-size:12.5px;font-weight:500;color:var(--coffee);text-decoration:none;white-space:nowrap;cursor:pointer}
+  .chip .icon{width:15px;height:15px;color:var(--ochre)}
+  .chip.off{color:var(--steel);border-style:dashed}
+  .chip.off .icon{color:var(--steel)}
+  .drive .title{font-size:16px;margin-top:1px}
+  .btns{display:flex;align-items:center;gap:10px;margin-top:10px}
+  .btns .btn{min-height:42px}
+  .btns .btn.primary,.btns .btn.reverse{flex:1}
+  .next .btns{margin-top:2px}
+  /* níveis de compactação: o script liga c1, c2, c3 só enquanto a aba não cabe na tela */
+  .c1 .editorial,.c1 .credit,.c1 .hint{display:none}
+  .c1 .content{padding:12px 20px;gap:8px}
+  .c1 .fill{gap:8px}
+  .c1 .head{padding-top:calc(env(safe-area-inset-top,20px) + 12px);padding-bottom:12px}
+  .c2 .sub,.c2 .ev .meta{display:none}
+  .c2 .card{padding:10px 16px}
+  .c2 .card.cal{padding-top:6px;padding-bottom:2px}
+  .c2 .chips{margin-top:5px}
+  .c2 .chip{min-height:30px}
+  .c2 .prota{width:82px;height:32px}
+  .c2 h1{font-size:25px}
+  .c2 .cal .add{min-height:28px}
+  .c2 .date{width:62px;display:flex;align-items:baseline;justify-content:center;gap:5px;padding:5px 0}
+  .c2 .date .d{font-size:14px;order:-1}
+  .c2 .ev{padding:4px 0}
+  .c3 .head .kicker,.c3 .drive .drive-ic,.c3 .drive .kicker{display:none}
+  .c3 .btns .btn{min-height:40px}
+  .c3 .head-inner{gap:6px}
 
   /* tab bar */
   .tabs{flex:0 0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px 10px calc(env(safe-area-inset-bottom,10px) + 12px);background:rgba(250,250,247,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
@@ -195,8 +231,8 @@
     </header>
     <div class="content">
       <div class="progress"><div class="lbl"><span>aulas assistidas</span><b id="progLabel">0/0</b></div><div class="track"><i id="progBar" style="width:0%"></i></div></div>
-      <div id="aulasList" style="display:flex;flex-direction:column;gap:12px"></div>
-      <p class="note">Toque na aula para abrir a gravação. O círculo à direita marca como assistida.</p>
+      <div id="aulasList" class="fill"></div>
+      <p class="note hint">O círculo marca a aula como assistida.</p>
     </div>
   </section>
 
@@ -211,15 +247,14 @@
       </div>
     </header>
     <div class="content">
-      <div id="slidesList" style="display:flex;flex-direction:column;gap:12px"></div>
-      <div class="card dark">
-        <div class="row" style="gap:14px">
+      <div class="card dark drive">
+        <div class="row" style="gap:12px">
           <div class="drive-ic"><svg class="icon"><use href="#i-folder"/></svg></div>
-          <div class="grow"><div class="kicker">pasta da turma</div><div class="title" style="font-size:18px;margin-top:2px">Pasta do curso no Drive</div></div>
+          <div class="grow"><div class="kicker">pasta da turma</div><div class="title">Pasta do curso no Drive</div></div>
         </div>
-        <p style="margin:12px 0 14px;font-size:13.5px">Gravações, apresentações e arquivos de cada aula.</p>
-        <div class="row" style="gap:10px;flex-wrap:wrap"><a class="btn primary" id="slidesPasta" href="#" target="_blank" rel="noopener">Abrir no Drive</a><button class="btn neon" data-copy="drive"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button></div>
+        <div class="btns"><a class="btn primary" id="slidesPasta" href="#" target="_blank" rel="noopener">Abrir no Drive</a><button class="btn neon" data-copy="drive"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button></div>
       </div>
+      <div id="slidesList" class="fill"></div>
       <div class="credit">curso conduzido por prota.ia</div>
     </div>
   </section>
@@ -235,13 +270,12 @@
       </div>
     </header>
     <div class="content">
-      <div class="card dark">
-        <div class="row" style="gap:14px">
+      <div class="card dark drive">
+        <div class="row" style="gap:12px">
           <div class="drive-ic"><svg class="icon"><use href="#i-folder"/></svg></div>
-          <div class="grow"><div class="kicker">pasta da turma</div><div class="title" style="font-size:18px;margin-top:2px">Pasta do curso no Drive</div></div>
+          <div class="grow"><div class="kicker">pasta da turma</div><div class="title">Pasta do curso no Drive</div></div>
         </div>
-        <p style="margin:12px 0 14px;font-size:13.5px">Gravações, apresentações e arquivos de cada aula.</p>
-        <div class="row" style="gap:10px;flex-wrap:wrap"><a class="btn primary" id="driveBtn" href="#" target="_blank" rel="noopener">Abrir no Drive</a><button class="btn neon" data-copy="drive"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button></div>
+        <div class="btns"><a class="btn primary" id="driveBtn" href="#" target="_blank" rel="noopener">Abrir no Drive</a><button class="btn neon" data-copy="drive"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button></div>
       </div>
       <div id="arquivosList" class="grupo"></div>
       <p class="note" id="arquivosNota">Em breve.</p>
@@ -262,24 +296,21 @@
     <div class="content">
       <div class="card dark next">
         <div class="kicker" id="nextKicker">próxima aula</div>
-        <div class="title" style="font-size:19px" id="nextTitle"></div>
+        <div class="title" id="nextTitle"></div>
         <div class="when" id="nextWhen"></div>
-        <div class="row" style="gap:10px;flex-wrap:wrap;margin-top:4px">
+        <div class="btns">
           <a class="btn reverse" id="meetBtn" href="#" target="_blank" rel="noopener"><svg class="icon"><use href="#i-video"/></svg>Entrar no Meet</a>
           <button class="btn neon" data-copy="meet"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button>
         </div>
-        <div class="meta">A mesma sala nas 4 aulas.</div>
       </div>
-
       <div class="card tarefa">
-        <div class="row" style="gap:10px"><svg class="icon" style="color:var(--ochre)"><use href="#i-task"/></svg><div class="kicker" id="tarefaKicker">tarefa da semana</div></div>
-        <div class="title" style="font-size:16px;margin-top:8px" id="tarefaTitulo"></div>
-        <div class="body" id="tarefaBody"></div>
-        <div class="meta">Sem entrega.</div>
+        <div class="top"><svg class="icon"><use href="#i-task"/></svg><div class="kicker" id="tarefaKicker">tarefa da semana</div><span class="pill" id="tarefaPill">em breve</span></div>
+        <div class="body" id="tarefaBody" hidden></div>
       </div>
-
-      <button class="btn ghost full" id="icsAll"><svg class="icon"><use href="#i-cal"/></svg>Adicionar as aulas à agenda</button>
-      <div class="card" style="padding-top:2px;padding-bottom:2px" id="agendaList"></div>
+      <div class="card cal">
+        <div class="top"><div class="kicker">calendário</div><button class="add" id="icsAll"><svg class="icon"><use href="#i-cal"/></svg>Adicionar à agenda</button></div>
+        <div id="agendaList"></div>
+      </div>
       <div class="credit">curso conduzido por prota.ia</div>
     </div>
   </section>
@@ -333,8 +364,8 @@ function renderAulas(){
     const p=partes(a.data), live=a.data===hojeISO, futura=a.data>hojeISO, passada=a.data<hojeISO, vista=assistidas.includes(a.num);
     const el=document.createElement('div'); el.className='card aula row'+(futura?' soon':''); el.setAttribute('role','button'); el.tabIndex=0;
     el.innerHTML=`<div class="num ${live?'live':''}">${(passada||live)&&!futura?'<svg class="icon"><use href="#i-playfill"/></svg>':a.num}</div>
-      <div class="grow"><div class="title">${esc(a.titulo)}</div><div class="meta">aula ${a.num} · ${p.dow}, ${p.dd} ${p.mes} · ${C.hora}<br>${esc(a.sub||'')}</div></div>
-      ${live?'<span class="pill hoje">hoje</span>':futura?'<span class="pill breve">em breve</span>':`<button class="check ${vista?'on':''}" aria-label="marcar como assistida" data-check="${a.num}"><svg class="icon"><use href="#i-check"/></svg></button>`}`;
+      <div class="grow"><div class="title">${esc(a.titulo)}</div><div class="meta"><span>aula ${a.num} · ${p.dow}, ${p.dd}/${String(p.m).padStart(2,'0')}</span>${live?'<span class="pill hoje">hoje</span>':futura?'<span class="pill breve">em breve</span>':''}</div>${a.sub?`<div class="sub">${esc(a.sub)}</div>`:''}</div>
+      ${live||futura?'':`<button class="check ${vista?'on':''}" aria-label="marcar como assistida" data-check="${a.num}"><svg class="icon"><use href="#i-check"/></svg></button>`}`;
     el.addEventListener('click',e=>{
       if(e.target.closest('[data-check]')){ e.stopPropagation(); const i=assistidas.indexOf(a.num); i>=0?assistidas.splice(i,1):assistidas.push(a.num); salvar(); renderAulas(); return; }
       if(live){ abrir(C.meet); return; }
@@ -348,6 +379,7 @@ function renderAulas(){
   });
   const n=assistidas.filter(x=>AULAS.some(a=>a.num===x)).length;
   $('#progLabel').textContent=n+'/'+AULAS.length; $('#progBar').style.width=(AULAS.length?100*n/AULAS.length:0)+'%';
+  ajustar();
 }
 
 /* ===== slides ===== */
@@ -355,17 +387,10 @@ function renderSlides(){
   const box=$('#slidesList'); box.innerHTML='';
   AULAS.forEach(a=>{
     const p=partes(a.data), futura=a.data>hojeISO, dia=p.dd+'/'+String(p.m).padStart(2,'0'), pdf=a.slides||'', pasta=a.pasta||'';
-    const card=document.createElement('div'); card.className='card aula-mat'+(futura?' soon':'');
-    let rows='';
-    if(!futura){
-      rows+= pdf
-        ? `<a class="mat-row" href="${esc(pdf)}" target="_blank" rel="noopener"><svg class="icon"><use href="#i-slides"/></svg><span class="grow">Apresentação</span><span class="ok"><svg class="icon"><use href="#i-check"/></svg></span></a>`
-        : `<div class="mat-row off"><svg class="icon"><use href="#i-slides"/></svg><span class="grow">Apresentação</span><span class="pill breve">em breve</span></div>`;
-      rows+= pasta
-        ? `<a class="mat-row" href="${esc(pasta)}" target="_blank" rel="noopener"><svg class="icon"><use href="#i-folder"/></svg><span class="grow">Arquivos da aula</span><span class="ok"><svg class="icon"><use href="#i-check"/></svg></span></a>`
-        : `<div class="mat-row off"><svg class="icon"><use href="#i-folder"/></svg><span class="grow">Arquivos da aula</span><span class="pill breve">em breve</span></div>`;
-    }
-    card.innerHTML=`<div class="row"><div class="num">${a.num}</div><div class="grow"><div class="title">${esc(a.titulo)}</div><div class="meta">aula ${a.num} · ${p.dow}, ${dia} · ${C.hora}</div></div>${futura?'<span class="pill breve">em breve</span>':''}</div>${rows?`<div class="mat-rows">${rows}</div>`:''}`;
+    const chip=(u,ic,rot)=>u?`<a class="chip" href="${esc(u)}" target="_blank" rel="noopener"><svg class="icon"><use href="#${ic}"/></svg>${rot}</a>`:`<span class="chip off" data-off><svg class="icon"><use href="#${ic}"/></svg>${rot}</span>`;
+    const card=document.createElement('div'); card.className='card mat'+(futura?' soon':'');
+    card.innerHTML=`<div class="row" style="gap:12px"><div class="num">${a.num}</div><div class="grow"><div class="title">${esc(a.titulo)}</div>${futura?`<div class="meta"><span>aula ${a.num} · ${p.dow}, ${dia}</span><span class="pill breve">em breve</span></div>`:`<div class="chips">${chip(pdf,'i-slides','Apresentação')}${chip(pasta,'i-folder','Arquivos')}</div>`}</div></div>`;
+    card.querySelectorAll('[data-off]').forEach(c=>c.addEventListener('click',()=>toast('Em breve')));
     box.appendChild(card);
   });
 }
@@ -399,14 +424,15 @@ function renderSemana(){
   $('#nextTitle').textContent='Aula '+ref.num+' · '+ref.titulo;
   $('#nextWhen').textContent=pp.dow+', '+pp.dd+' de '+pp.mesL+' · '+C.hora+' às '+fim();
 
-  if(!ult){ $('#tarefaKicker').textContent='tarefa da semana'; $('#tarefaTitulo').textContent='Aula '+AULAS[0].num+' · '+AULAS[0].titulo; const b=$('#tarefaBody'); b.className='body empty'; b.textContent='Em breve.'; }
-  else { $('#tarefaKicker').textContent='tarefa da semana · aula '+ult.num; $('#tarefaTitulo').textContent=ult.titulo; const b=$('#tarefaBody'); if(ult.tarefa){b.className='body';b.textContent=ult.tarefa;} else {b.className='body empty';b.textContent='Em breve.';} }
+  const b=$('#tarefaBody'), tem=!!(ult&&ult.tarefa);
+  $('#tarefaKicker').textContent=ult?'tarefa · aula '+ult.num:'tarefa da semana';
+  $('#tarefaPill').textContent=tem?'sem entrega':'em breve';
+  b.hidden=!tem; b.textContent=tem?ult.tarefa:'';
 
   const box=$('#agendaList'); box.innerHTML='';
   AULAS.forEach(a=>{const p=partes(a.data),live=a.data===hojeISO,past=a.data<hojeISO;
     const el=document.createElement('div'); el.className='ev';
-    el.innerHTML=`<div class="date ${live?'live':past?'past':''}"><div class="m">${p.mes}</div><div class="d">${p.dd}</div></div><div class="grow"><div class="title" style="font-size:15px">${esc(a.titulo)}</div><div class="meta">aula ${a.num} · ${p.dow} · ${C.hora}${live?' · hoje':''}</div></div><button class="btn ghost" data-ics="${a.num}">Agendar</button>`;
-    el.querySelector('[data-ics]').addEventListener('click',()=>baixarIcs([a],'claude-estruturado-'+C.slug+'-aula-'+a.num));
+    el.innerHTML=`<div class="date ${live?'live':past?'past':''}"><div class="m">${p.mes}</div><div class="d">${p.dd}</div></div><div class="grow"><div class="title">${esc(a.titulo)}</div><div class="meta">aula ${a.num} · ${p.dow} · ${C.hora}${live?' · hoje':''}</div></div>`;
     box.appendChild(el);
   });
 }
@@ -421,10 +447,19 @@ $('#icsAll').addEventListener('click',()=>baixarIcs(AULAS,'claude-estruturado-'+
 
 /* ===== UI ===== */
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1800);}
-$$('.tab').forEach(b=>b.addEventListener('click',()=>{$$('.tab').forEach(x=>x.classList.toggle('active',x===b));$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===b.dataset.tab));$('.view.active').scrollTop=0;}));
+$$('.tab').forEach(b=>b.addEventListener('click',()=>{$$('.tab').forEach(x=>x.classList.toggle('active',x===b));$$('.view').forEach(v=>v.classList.toggle('active',v.dataset.view===b.dataset.tab));$('.view.active').scrollTop=0; ajustar();}));
 $$('[data-copy]').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.copy==='meet'?C.meet:C.drive; if(!v){toast('Link em breve');return;} const ok=()=>toast('Link copiado'); if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(ok).catch(()=>{prompt('copiar',v);}); else prompt('copiar',v);}));
 
-renderAulas(); renderSlides(); renderArquivos(); renderSemana();
+/* ===== sem rolagem: compacta a aba ativa até caber na tela ===== */
+function ajustar(){
+  const v=$('.view.active'); if(!v) return;
+  v.classList.remove('c1','c2','c3');
+  for(const c of ['c1','c2','c3']){ if(v.scrollHeight<=v.clientHeight+1) break; v.classList.add(c); }
+}
+window.addEventListener('resize',ajustar);
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(ajustar);
+
+renderAulas(); renderSlides(); renderArquivos(); renderSemana(); ajustar();
 if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
 const abertoEm=Date.now();
 document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible'&&Date.now()-abertoEm>20*36e5) location.reload(); });

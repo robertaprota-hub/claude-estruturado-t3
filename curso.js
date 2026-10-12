@@ -32,18 +32,18 @@ window.CURSO = {
                tipo: 'prompt' | 'skill' | 'template' | 'link' */
 window.AULAS = [
   { num: '01', data: '2026-10-13', titulo: 'Fundamentos de IA e Prompt',
-    sub: 'camadas da IA, ciclo 4D e prompt em cinco passos',
+    sub: 'Camadas da IA, ciclo 4D e prompt em cinco passos',
     gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/17H4qBiyNABpN5uja6uW89o8OF-sNNMnY', tarefa: '', arquivos: [] },
 
   { num: '02', data: '2026-10-20', titulo: 'Markdown, Projetos e Rotinas',
-    sub: 'contexto fixo em .md, projetos e rotinas agendadas',
+    sub: 'Contexto fixo em .md, projetos e rotinas agendadas',
     gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/11hmpaooiLaaSd4AZa6Eb48xq3Q4wO-bT', tarefa: '', arquivos: [] },
 
   { num: '03', data: '2026-10-27', titulo: 'Artifacts e Skills',
-    sub: 'iterar em Artifacts e criar skills sem código',
+    sub: 'Iterar em Artifacts e criar skills sem código',
     gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/1Xyr7UDyMOE0pEdtX2LtYXsLJRxFH4b4c', tarefa: '', arquivos: [] },
 
   { num: '04', data: '2026-11-03', titulo: 'Claude no Office',
-    sub: 'arquivo aberto no Office, da planilha ao slide',
+    sub: 'Claude no Excel, no Word e no PowerPoint',
     gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/1O0QbA6JWt30_PFCWOn1JR9kZopS_3IUu', tarefa: '', arquivos: [] }
 ];
