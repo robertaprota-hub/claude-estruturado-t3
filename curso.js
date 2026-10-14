@@ -33,7 +33,7 @@ window.CURSO = {
 window.AULAS = [
   { num: '01', data: '2026-10-13', titulo: 'Fundamentos de IA e Prompt',
     sub: 'Camadas da IA, ciclo 4D e prompt em cinco passos',
-    gravacao: '', slides: 'https://drive.google.com/file/d/1NO_jTaj8q1WsbQzsmwYwP_HZ6wBxlLqD/view', pasta: 'https://drive.google.com/drive/folders/17H4qBiyNABpN5uja6uW89o8OF-sNNMnY', tarefa: '', arquivos: [] },
+    gravacao: 'https://drive.google.com/file/d/1iF7Qo2KmpyKr2-1W4jQX6YSe5sgpEB29/view', slides: 'https://drive.google.com/file/d/1NO_jTaj8q1WsbQzsmwYwP_HZ6wBxlLqD/view', pasta: 'https://drive.google.com/drive/folders/17H4qBiyNABpN5uja6uW89o8OF-sNNMnY', tarefa: '', arquivos: [] },
 
   { num: '02', data: '2026-10-20', titulo: 'Markdown, Projetos e Rotinas',
     sub: 'Contexto fixo em .md, projetos e rotinas agendadas',
