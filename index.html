@@ -199,11 +199,12 @@
   .vazio{font-family:var(--font-mono);font-size:11px;color:var(--mut);padding:8px 0 2px;border-top:1.5px solid var(--linha)}
   .ins-h{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1.5px solid var(--linha);cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--coffee)}
   .ins-h .caret{margin-left:auto}
-  .ins-h .n{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;color:var(--saddle);flex:0 0 auto;width:22px}
-  .ins-b{display:none;padding:0 0 10px 32px}
+  .ins-h .ic{color:var(--ochre);width:20px;height:20px}
+  .ins-b{display:none;padding:0 0 10px 30px}
   .ins.aberto .ins-b{display:block}
   .ins.aberto .ins-h .caret{transform:rotate(90deg)}
-  .ins-i{font-size:13.5px;line-height:1.4;color:var(--coffee);padding:5px 0;border-top:1px dashed var(--linha)}
+  .ins-i{display:flex;gap:8px;font-size:13.5px;line-height:1.4;color:var(--coffee);padding:5px 0;border-top:1px dashed var(--linha)}
+  .ins-i .n{font-family:var(--font-mono);font-size:11.5px;color:var(--ochre);flex:0 0 14px;padding-top:1px}
   .ins-i:first-child{border-top:0}
   .ins-i b{font-weight:700}
   .ins-i em{font-style:normal;color:var(--mut)}
@@ -240,6 +241,10 @@
     <symbol id="i-link" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.3 1.3"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.3-1.3"/></g></symbol>
     <symbol id="i-ext" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6H5V6h6"/></g></symbol>
     <symbol id="i-chev" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M9 5.5l6.5 6.5L9 18.5"/></g></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2"/><circle cx="4.5" cy="12" r="1.2"/><circle cx="4.5" cy="18" r="1.2"/></g></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M12 4l9 4.5-9 4.5-9-4.5z"/><path d="M3 13l9 4.5 9-4.5M3 17.5L12 22l9-4.5"/></g></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M4 4.5h6.5a2 2 0 0 1 2 2V20a1.5 1.5 0 0 0-1.5-1.5H4z"/><path d="M20 4.5h-6.5a2 2 0 0 0-2 2V20a1.5 1.5 0 0 1 1.5-1.5H20z"/></g></symbol>
+    <symbol id="i-cycle" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M20 12a8 8 0 0 1-14.5 4.6M4 12a8 8 0 0 1 14.5-4.6"/><path d="M18.5 3.5v4h-4M5.5 20.5v-4h4"/></g></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M5 12.5l4.5 4.5L19 7"/></g></symbol>
     <symbol id="i-video" viewBox="0 0 24 24"><g filter="url(#goiva)"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="M16 11l5-3v8l-5-3z"/></g></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24"><g filter="url(#goiva)"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5h10"/></g></symbol>
@@ -283,7 +288,7 @@
       </div>
     </header>
     <div class="content">
-      <div class="progress"><div class="lbl"><span>feito</span><b id="trilhaLabel">0/0</b></div><div class="track"><i id="trilhaBar" style="width:0%"></i></div></div>
+      <div class="progress"><div class="lbl"><span>concluído</span><b id="trilhaLabel">0%</b></div><div class="track"><i id="trilhaBar" style="width:0%"></i></div></div>
       <div id="trilhaList" style="display:flex;flex-direction:column;gap:10px"></div>
       <p class="note">O progresso fica salvo neste aparelho.</p>
       <div class="credit">curso conduzido por prota.ia</div>
@@ -398,24 +403,24 @@ function renderTrilha(){
   const box=$('#trilhaList'); box.innerHTML=''; let tot=0, ok=0;
   AULAS.forEach(a=>{
     const itens=a.trilha||[], futura=a.data>hojeISO, ids=itens.map((_,i)=>a.num+'-'+i), n=ids.filter(i=>feitos.includes(i)).length;
-    tot+=itens.length; ok+=n;
-    if(!(a.num in abertos)) abertos[a.num]=!futura&&itens.length>0&&n<itens.length;
+    if(!futura){ tot+=itens.length; ok+=n; }
+    if(futura) abertos[a.num]=false; else if(!(a.num in abertos)) abertos[a.num]=itens.length>0&&n<itens.length;
     const card=document.createElement('div'); card.className='card acc'+(abertos[a.num]?' aberto':'');
-    const selo=futura||!itens.length?'<span class="pill breve">em breve</span>':n===itens.length?'<span class="pill ok">feito</span>':`<span class="pill breve">${n}/${itens.length}</span>`;
+    const selo=futura||!itens.length?'<span class="pill breve">em breve</span>':n===itens.length?'<span class="pill ok">100%</span>':`<span class="pill breve">${Math.round(100*n/itens.length)}%</span>`;
     card.innerHTML=`<div class="cab"><div class="num">${a.num}</div><div class="grow"><div class="title">${esc(a.titulo)}</div></div>${selo}${CARET}</div><div class="corpo"></div>`;
     const corpo=card.querySelector('.corpo');
-    if(!itens.length) corpo.innerHTML='<div class="vazio">A lista entra depois da aula.</div>';
-    itens.forEach((txt,i)=>{
+    if(!itens.length||futura) corpo.innerHTML='<div class="vazio">A lista entra no dia da aula.</div>';
+    (futura?[]:itens).forEach((txt,i)=>{
       const id=ids[i], on=feitos.includes(id);
       const el=document.createElement('div'); el.className='it'+(on?' done':''); el.setAttribute('role','checkbox'); el.setAttribute('aria-checked',on);
       el.innerHTML=`<div class="chk ${on?'on':''}"><svg class="icon"><use href="#i-check"/></svg></div><div class="ti">${esc(txt)}</div>`;
       el.addEventListener('click',()=>{const k=feitos.indexOf(id); k>=0?feitos.splice(k,1):feitos.push(id); salvar(); renderTrilha();});
       corpo.appendChild(el);
     });
-    card.querySelector('.cab').addEventListener('click',()=>{abertos[a.num]=!abertos[a.num]; card.classList.toggle('aberto',abertos[a.num]);});
+    if(futura) card.querySelector('.caret').style.visibility='hidden'; else card.querySelector('.cab').addEventListener('click',()=>{abertos[a.num]=!abertos[a.num]; card.classList.toggle('aberto',abertos[a.num]);});
     box.appendChild(card);
   });
-  $('#trilhaLabel').textContent=ok+'/'+tot; $('#trilhaBar').style.width=(tot?100*ok/tot:0)+'%';
+  const pc=tot?Math.round(100*ok/tot):0; $('#trilhaLabel').textContent=pc+'%'; $('#trilhaBar').style.width=pc+'%';
 }
 
 /* ===== insights ===== */
@@ -429,7 +434,7 @@ function renderInsights(){
     if(!grupos.length) gr.innerHTML='<div class="vazio" style="margin-top:8px">Os insights entram depois da aula.</div>';
     grupos.forEach((g,k)=>{
       const el=document.createElement('div'); el.className='ins';
-      el.innerHTML=`<div class="ins-h"><span class="n">${String(k+1).padStart(2,'0')}</span>${esc(g.titulo)}${CARET}</div><div class="ins-b">${(g.itens||[]).map(([b,d])=>`<div class="ins-i"><b>${esc(b)}</b>${d?' <em>· '+esc(d)+'</em>':''}</div>`).join('')}</div>`;
+      el.innerHTML=`<div class="ins-h"><svg class="icon ic"><use href="#${g.icone||'i-skill'}"/></svg>${esc(g.titulo)}${CARET}</div><div class="ins-b">${(g.itens||[]).map(([b,d],i)=>`<div class="ins-i">${g.num?`<span class="n">${i+1}</span>`:''}<span><b>${esc(b)}</b>${d?' <em>· '+esc(d)+'</em>':''}</span></div>`).join('')}</div>`;
       el.querySelector('.ins-h').addEventListener('click',()=>el.classList.toggle('aberto'));
       gr.appendChild(el);
     });
