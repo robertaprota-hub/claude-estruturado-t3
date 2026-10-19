@@ -85,24 +85,22 @@ window.AULAS = [
       'Transformar um documento seu em .md',
       'Criar um projeto para uma tarefa repetitiva: instruções e arquivos',
       'Conectar o e-mail ou o Drive ao Claude',
-      'Agendar uma rotina, como a revisão de sexta',
-      'Usar o projeto em 3 conversas na semana'
+      'Agendar uma rotina',
+      'Instalar o Claude no Excel, no Word e no PowerPoint'
     ], insights: [] },
 
   { num: '03', data: '2026-10-27', titulo: 'Artifacts e Skills',
     sub: 'Iterar em Artifacts e criar skills sem código',
     gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/1Xyr7UDyMOE0pEdtX2LtYXsLJRxFH4b4c', tarefa: '', arquivos: [], trilha: [
-      'Criar um artifact a partir de um arquivo seu',
-      'Gerar o arquivo final (.docx, .pptx ou .xlsx) do artifact aprovado',
+      'Criar um artifact',
       'Instalar uma skill pronta',
-      'Criar a skill de um processo da sua área',
+      'Criar uma skill',
       'Testar a skill com /nome numa conversa'
     ], insights: [] },
 
   { num: '04', data: '2026-11-03', titulo: 'Claude no Office',
     sub: 'Claude no Excel, no Word e no PowerPoint',
     gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/1O0QbA6JWt30_PFCWOn1JR9kZopS_3IUu', tarefa: '', arquivos: [], trilha: [
-      'Instalar o Claude no Excel, no Word e no PowerPoint',
       'Rodar /verificar numa cópia de uma planilha sua',
       'Fazer o /fup de um arquivo e levar para um slide',
       'Criar um documento no Claude Docs ou uma apresentação no Claude Slides',
