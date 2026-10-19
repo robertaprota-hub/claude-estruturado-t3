@@ -181,6 +181,34 @@
   .num.live,.date.live{--tinta:var(--ochre)}
   .btn.primary{--tinta:var(--ochre);--rec:15px}
 
+  /* trilha e insights */
+  .rola .content{padding-bottom:24px}
+  .chk{width:24px;height:24px;border:2.5px solid var(--coffee);background:var(--papel);flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:transparent;margin-top:1px}
+  .chk.on{background:var(--ochre);color:var(--coffee)}
+  .chk .icon{width:15px;height:15px;stroke-width:3.2}
+  .it{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-top:1.5px solid var(--linha);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .it .ti{font-size:14.5px;line-height:1.35;color:var(--coffee);font-weight:500}
+  .it.done .ti{text-decoration:line-through;text-decoration-thickness:2px;color:var(--mut);font-weight:400}
+  .acc .cab{display:flex;align-items:center;gap:12px;cursor:pointer;padding:2px 0}
+  .acc .cab .pill{margin-left:auto}
+  .pill.ok{background:var(--ochre);color:var(--coffee);border:0}
+  .caret{width:18px;height:18px;flex:0 0 auto;color:var(--saddle);transition:transform 160ms}
+  .acc.aberto .caret{transform:rotate(90deg)}
+  .acc .corpo{display:none;margin-top:8px}
+  .acc.aberto .corpo{display:block}
+  .vazio{font-family:var(--font-mono);font-size:11px;color:var(--mut);padding:8px 0 2px;border-top:1.5px solid var(--linha)}
+  .ins-h{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1.5px solid var(--linha);cursor:pointer;font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--coffee)}
+  .ins-h .caret{margin-left:auto}
+  .ins-h .n{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;color:var(--saddle);flex:0 0 auto;width:22px}
+  .ins-b{display:none;padding:0 0 10px 32px}
+  .ins.aberto .ins-b{display:block}
+  .ins.aberto .ins-h .caret{transform:rotate(90deg)}
+  .ins-i{font-size:13.5px;line-height:1.4;color:var(--coffee);padding:5px 0;border-top:1px dashed var(--linha)}
+  .ins-i:first-child{border-top:0}
+  .ins-i b{font-weight:700}
+  .ins-i em{font-style:normal;color:var(--mut)}
+  .c2 .it .ti{font-size:14px}
+
   /* barra de abas */
   .tabs{flex:0 0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px 10px calc(env(safe-area-inset-bottom,10px) + 8px);border-top:2px solid var(--linha-esc);position:relative}
   .tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border:8px solid transparent;color:var(--mutd);font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase}
@@ -211,6 +239,7 @@
     <symbol id="i-template" viewBox="0 0 24 24"><g filter="url(#goiva)"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 10v10"/></g></symbol>
     <symbol id="i-link" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.3 1.3"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.3-1.3"/></g></symbol>
     <symbol id="i-ext" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6H5V6h6"/></g></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M9 5.5l6.5 6.5L9 18.5"/></g></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><g filter="url(#goiva)"><path d="M5 12.5l4.5 4.5L19 7"/></g></symbol>
     <symbol id="i-video" viewBox="0 0 24 24"><g filter="url(#goiva)"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="M16 11l5-3v8l-5-3z"/></g></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24"><g filter="url(#goiva)"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5h10"/></g></symbol>
@@ -220,54 +249,14 @@
 
 <div class="shell" id="app">
 
-  <!-- GRAVAÇÕES -->
-  <section class="view active" data-view="gravacoes">
+  <!-- AULAS -->
+  <section class="view active" data-view="aulas">
     <header class="head">
       <div class="head-inner">
         <div class="brand"><span class="prota" role="img" aria-label="prota.ia"></span><span class="turma-chip" data-turma></span></div>
         <div class="frase" data-linha></div>
-        <h1><span class="tarja">Gravações<i></i></span></h1>
-        <p class="editorial">Vídeos das aulas.</p>
-      </div>
-    </header>
-    <div class="content">
-      <div class="progress"><div class="lbl"><span>aulas assistidas</span><b id="progLabel">0/0</b></div><div class="track"><i id="progBar" style="width:0%"></i></div></div>
-      <div id="aulasList" class="fill"></div>
-      <p class="note hint">O círculo marca a aula como assistida.</p>
-    </div>
-  </section>
-
-  <!-- SLIDES -->
-  <section class="view" data-view="slides">
-    <header class="head">
-      <div class="head-inner">
-        <div class="brand"><span class="prota" role="img" aria-label="prota.ia"></span><span class="turma-chip" data-turma></span></div>
-        <div class="frase" data-linha></div>
-        <h1><span class="tarja">Slides<i></i></span></h1>
-        <p class="editorial">Apresentação de cada aula.</p>
-      </div>
-    </header>
-    <div class="content">
-      <div class="card dark drive">
-        <div class="row" style="gap:12px">
-          <div class="selo"><svg viewBox="0 0 200 160"><use href="#g-pasta"/></svg></div>
-          <div class="grow"><div class="kicker">pasta da turma</div><div class="title">Pasta do curso no Drive</div></div>
-        </div>
-        <div class="btns"><a class="btn primary" id="slidesPasta" href="#" target="_blank" rel="noopener">Abrir no Drive</a><button class="btn neon" data-copy="drive"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button></div>
-      </div>
-      <div id="slidesList" class="fill"></div>
-      <div class="credit">curso conduzido por prota.ia</div>
-    </div>
-  </section>
-
-  <!-- ARQUIVOS -->
-  <section class="view" data-view="arquivos">
-    <header class="head">
-      <div class="head-inner">
-        <div class="brand"><span class="prota" role="img" aria-label="prota.ia"></span><span class="turma-chip" data-turma></span></div>
-        <div class="frase" data-linha></div>
-        <h1><span class="tarja">Arquivos<i></i></span></h1>
-        <p class="editorial">Materiais compartilhados.</p>
+        <h1><span class="tarja">Aulas<i></i></span></h1>
+        <p class="editorial">Gravação, apresentação e materiais de cada aula.</p>
       </div>
     </header>
     <div class="content">
@@ -278,8 +267,41 @@
         </div>
         <div class="btns"><a class="btn primary" id="driveBtn" href="#" target="_blank" rel="noopener">Abrir no Drive</a><button class="btn neon" data-copy="drive"><svg class="icon" style="width:16px;height:16px"><use href="#i-copy"/></svg>Copiar link</button></div>
       </div>
-      <div id="arquivosList" class="grupo"></div>
-      <p class="note" id="arquivosNota">Em breve.</p>
+      <div id="aulasList" class="fill"></div>
+      <div class="credit">curso conduzido por prota.ia</div>
+    </div>
+  </section>
+
+  <!-- TRILHA -->
+  <section class="view rola" data-view="trilha">
+    <header class="head">
+      <div class="head-inner">
+        <div class="brand"><span class="prota" role="img" aria-label="prota.ia"></span><span class="turma-chip" data-turma></span></div>
+        <div class="frase" data-linha></div>
+        <h1><span class="tarja">Trilha<i></i></span></h1>
+        <p class="editorial">O que fazer depois de cada aula.</p>
+      </div>
+    </header>
+    <div class="content">
+      <div class="progress"><div class="lbl"><span>feito</span><b id="trilhaLabel">0/0</b></div><div class="track"><i id="trilhaBar" style="width:0%"></i></div></div>
+      <div id="trilhaList" style="display:flex;flex-direction:column;gap:10px"></div>
+      <p class="note">O progresso fica salvo neste aparelho.</p>
+      <div class="credit">curso conduzido por prota.ia</div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section class="view rola" data-view="insights">
+    <header class="head">
+      <div class="head-inner">
+        <div class="brand"><span class="prota" role="img" aria-label="prota.ia"></span><span class="turma-chip" data-turma></span></div>
+        <div class="frase" data-linha></div>
+        <h1><span class="tarja">Insights<i></i></span></h1>
+        <p class="editorial">O essencial de cada aula.</p>
+      </div>
+    </header>
+    <div class="content">
+      <div id="insightsList" style="display:flex;flex-direction:column;gap:10px"></div>
       <div class="credit">curso conduzido por prota.ia</div>
     </div>
   </section>
@@ -319,9 +341,9 @@
   </section>
 
   <nav class="tabs" aria-label="seções">
-    <button class="tab active" data-tab="gravacoes"><svg class="icon"><use href="#i-play"/></svg>gravações</button>
-    <button class="tab" data-tab="slides"><svg class="icon"><use href="#i-slides"/></svg>slides</button>
-    <button class="tab" data-tab="arquivos"><svg class="icon"><use href="#i-folder"/></svg>arquivos</button>
+    <button class="tab active" data-tab="aulas"><svg class="icon"><use href="#i-play"/></svg>aulas</button>
+    <button class="tab" data-tab="trilha"><svg class="icon"><use href="#i-task"/></svg>trilha</button>
+    <button class="tab" data-tab="insights"><svg class="icon"><use href="#i-skill"/></svg>insights</button>
     <button class="tab" data-tab="semana"><svg class="icon"><use href="#i-cal"/></svg>semana</button>
   </nav>
 
@@ -336,7 +358,7 @@ const MESES=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','
 const MESES_L=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
 const DIAS_L=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
 const hoje=new Date(); const hojeISO=hoje.getFullYear()+'-'+String(hoje.getMonth()+1).padStart(2,'0')+'-'+String(hoje.getDate()).padStart(2,'0');
-const KEY='claude-estruturado-'+C.slug+':aulas-assistidas';
+const KEYT='claude-estruturado-'+C.slug+':trilha';
 const ls={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
 const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -344,8 +366,9 @@ const partes=iso=>{const [y,m,d]=iso.split('-').map(Number);return {y,m,d,dd:Str
 const hm=(h,m)=>h+'h'+String(m).padStart(2,'0');
 const fim=()=>{const t=C.h*60+C.m+C.duracaoMin;return hm(Math.floor(t/60),t%60);};
 const dur=()=>{const h=Math.floor(C.duracaoMin/60),m=C.duracaoMin%60;return (h?h+'h':'')+(m?String(m).padStart(h?2:1,'0'):'')+(!h&&m?'min':'');};
-let assistidas=[]; try{assistidas=JSON.parse(ls.get(KEY)||'[]')}catch(e){assistidas=[]}
-const salvar=()=>ls.set(KEY,JSON.stringify(assistidas));
+let feitos=[]; try{feitos=JSON.parse(ls.get(KEYT)||'[]')}catch(e){feitos=[]}
+const salvar=()=>ls.set(KEYT,JSON.stringify(feitos));
+const abertos={};
 const abrir=u=>window.open(u,'_blank','noopener');
 
 /* ===== cabeçalhos ===== */
@@ -354,67 +377,64 @@ $$('[data-linha]').forEach(e=>e.textContent=C.linha);
 $('#semanaKicker').textContent=C.diaSemana+' · '+C.hora+' às '+fim()+' · online';
 $('#meetBtn').href=C.meet||'#';
 $('#driveBtn').href=C.drive||'#';
-$('#slidesPasta').href=C.drive||'#';
 if(!C.drive){$('#driveBtn').addEventListener('click',e=>{e.preventDefault();toast('Pasta em breve');});}
-if(!C.drive){$('#slidesPasta').addEventListener('click',e=>{e.preventDefault();toast('Pasta em breve');});}
 
-/* ===== gravações ===== */
+/* ===== aulas ===== */
+const CARET='<svg class="caret icon"><use href="#i-chev"/></svg>';
 function renderAulas(){
   const box=$('#aulasList'); box.innerHTML='';
   AULAS.forEach(a=>{
-    const p=partes(a.data), live=a.data===hojeISO, futura=a.data>hojeISO, passada=a.data<hojeISO, vista=assistidas.includes(a.num);
-    const el=document.createElement('div'); el.className='card aula row'+(futura?' soon':''); el.setAttribute('role','button'); el.tabIndex=0;
-    el.innerHTML=`<div class="num ${live?'live':''}">${(passada||live)&&!futura?'<svg class="icon"><use href="#i-playfill"/></svg>':a.num}</div>
-      <div class="grow"><div class="title">${esc(a.titulo)}</div><div class="meta"><span>Aula ${a.num} · ${p.dow}, ${p.dd}/${String(p.m).padStart(2,'0')}</span>${live?'<span class="pill hoje">hoje</span>':futura?'<span class="pill breve">em breve</span>':''}</div>${a.sub?`<div class="sub">${esc(a.sub)}</div>`:''}</div>
-      ${live||futura?'':`<button class="check ${vista?'on':''}" aria-label="marcar como assistida" data-check="${a.num}"><svg class="icon"><use href="#i-check"/></svg></button>`}`;
-    el.addEventListener('click',e=>{
-      if(e.target.closest('[data-check]')){ e.stopPropagation(); const i=assistidas.indexOf(a.num); i>=0?assistidas.splice(i,1):assistidas.push(a.num); salvar(); renderAulas(); return; }
-      if(live){ abrir(C.meet); return; }
-      if(futura){ toast('Disponível após a aula'); return; }
-      const u=a.gravacao||C.pastaGravacoes||C.drive;
-      if(!u){ toast('Gravação em breve'); return; }
-      if(!assistidas.includes(a.num)){ assistidas.push(a.num); salvar(); }
-      abrir(u); renderAulas();
-    });
-    box.appendChild(el);
-  });
-  const n=assistidas.filter(x=>AULAS.some(a=>a.num===x)).length;
-  $('#progLabel').textContent=n+'/'+AULAS.length; $('#progBar').style.width=(AULAS.length?100*n/AULAS.length:0)+'%';
-  ajustar();
-}
-
-/* ===== slides ===== */
-function renderSlides(){
-  const box=$('#slidesList'); box.innerHTML='';
-  AULAS.forEach(a=>{
-    const p=partes(a.data), futura=a.data>hojeISO, dia=p.dd+'/'+String(p.m).padStart(2,'0'), pdf=a.slides||'', pasta=a.pasta||'';
+    const p=partes(a.data), futura=a.data>hojeISO, dia=p.dd+'/'+String(p.m).padStart(2,'0');
     const chip=(u,ic,rot)=>u?`<a class="chip" href="${esc(u)}" target="_blank" rel="noopener"><svg class="icon"><use href="#${ic}"/></svg>${rot}</a>`:`<span class="chip off" data-off><svg class="icon"><use href="#${ic}"/></svg>${rot}</span>`;
     const card=document.createElement('div'); card.className='card mat'+(futura?' soon':'');
-    card.innerHTML=`<div class="row" style="gap:12px"><div class="num">${a.num}</div><div class="grow"><div class="title">${esc(a.titulo)}</div>${futura?`<div class="meta"><span>Aula ${a.num} · ${p.dow}, ${dia}</span><span class="pill breve">em breve</span></div>`:`<div class="chips">${chip(pdf,'i-slides','Apresentação')}${chip(pasta,'i-folder','Arquivos')}</div>`}</div></div>`;
+    card.innerHTML=`<div class="row" style="gap:12px"><div class="num">${a.num}</div><div class="grow"><div class="title">${esc(a.titulo)}</div><div class="meta"><span>Aula ${a.num} · ${p.dow}, ${dia}</span>${futura?'<span class="pill breve">em breve</span>':''}</div></div></div>${futura?'':`<div class="chips" style="flex-wrap:wrap">${chip(a.gravacao,'i-play','Gravação')}${chip(a.slides,'i-slides','Apresentação')}${chip(a.pasta,'i-folder','Materiais')}</div>`}`;
     card.querySelectorAll('[data-off]').forEach(c=>c.addEventListener('click',()=>toast('Em breve')));
     box.appendChild(card);
   });
 }
 
-/* ===== arquivos ===== */
-const ICONE={prompt:'i-prompt',skill:'i-skill',template:'i-template',link:'i-link'};
-function renderArquivos(){
-  const box=$('#arquivosList'); box.innerHTML=''; let total=0;
+/* ===== trilha ===== */
+function renderTrilha(){
+  const box=$('#trilhaList'); box.innerHTML=''; let tot=0, ok=0;
   AULAS.forEach(a=>{
-    const itens=(a.arquivos||[]).filter(x=>x&&x.nome); if(!itens.length) return; total+=itens.length;
-    const p=partes(a.data);
-    const g=document.createElement('div');
-    g.innerHTML=`<div class="section-label"><span class="kicker">aula ${a.num} · ${esc(a.titulo)}</span><small>${p.dd}/${String(p.m).padStart(2,'0')}</small></div><div class="card" style="padding-top:2px;padding-bottom:2px"></div>`;
-    const card=g.querySelector('.card');
-    itens.forEach(it=>{
-      const u=it.url||a.pasta||C.pastaArquivos||C.drive, el=document.createElement(u?'a':'div'); el.className='file';
-      if(u){el.href=u;el.target='_blank';el.rel='noopener';}
-      el.innerHTML=`<svg class="icon"><use href="#${ICONE[it.tipo]||'i-file'}"/></svg><div class="grow"><div class="t">${esc(it.nome)}${it.tipo?`<span class="tag">${esc(it.tipo)}</span>`:''}</div>${it.desc?`<div class="s">${esc(it.desc)}</div>`:''}</div><svg class="icon go"><use href="#i-ext"/></svg>`;
-      card.appendChild(el);
+    const itens=a.trilha||[], futura=a.data>hojeISO, ids=itens.map((_,i)=>a.num+'-'+i), n=ids.filter(i=>feitos.includes(i)).length;
+    tot+=itens.length; ok+=n;
+    if(!(a.num in abertos)) abertos[a.num]=!futura&&itens.length>0&&n<itens.length;
+    const card=document.createElement('div'); card.className='card acc'+(abertos[a.num]?' aberto':'');
+    const selo=futura||!itens.length?'<span class="pill breve">em breve</span>':n===itens.length?'<span class="pill ok">feito</span>':`<span class="pill breve">${n}/${itens.length}</span>`;
+    card.innerHTML=`<div class="cab"><div class="num">${a.num}</div><div class="grow"><div class="title">${esc(a.titulo)}</div></div>${selo}${CARET}</div><div class="corpo"></div>`;
+    const corpo=card.querySelector('.corpo');
+    if(!itens.length) corpo.innerHTML='<div class="vazio">A lista entra depois da aula.</div>';
+    itens.forEach((txt,i)=>{
+      const id=ids[i], on=feitos.includes(id);
+      const el=document.createElement('div'); el.className='it'+(on?' done':''); el.setAttribute('role','checkbox'); el.setAttribute('aria-checked',on);
+      el.innerHTML=`<div class="chk ${on?'on':''}"><svg class="icon"><use href="#i-check"/></svg></div><div class="ti">${esc(txt)}</div>`;
+      el.addEventListener('click',()=>{const k=feitos.indexOf(id); k>=0?feitos.splice(k,1):feitos.push(id); salvar(); renderTrilha();});
+      corpo.appendChild(el);
     });
-    box.appendChild(g);
+    card.querySelector('.cab').addEventListener('click',()=>{abertos[a.num]=!abertos[a.num]; card.classList.toggle('aberto',abertos[a.num]);});
+    box.appendChild(card);
   });
-  $('#arquivosNota').hidden=total>0;
+  $('#trilhaLabel').textContent=ok+'/'+tot; $('#trilhaBar').style.width=(tot?100*ok/tot:0)+'%';
+}
+
+/* ===== insights ===== */
+function renderInsights(){
+  const box=$('#insightsList'); box.innerHTML='';
+  AULAS.forEach(a=>{
+    const grupos=a.insights||[], futura=a.data>hojeISO;
+    const card=document.createElement('div'); card.className='card'+(futura?' soon':'');
+    card.innerHTML=`<div class="row" style="gap:12px;padding:2px 0"><div class="num">${a.num}</div><div class="grow"><div class="title">${esc(a.titulo)}</div></div>${!grupos.length?'<span class="pill breve">em breve</span>':''}</div><div class="gr"></div>`;
+    const gr=card.querySelector('.gr');
+    if(!grupos.length) gr.innerHTML='<div class="vazio" style="margin-top:8px">Os insights entram depois da aula.</div>';
+    grupos.forEach((g,k)=>{
+      const el=document.createElement('div'); el.className='ins';
+      el.innerHTML=`<div class="ins-h"><span class="n">${String(k+1).padStart(2,'0')}</span>${esc(g.titulo)}${CARET}</div><div class="ins-b">${(g.itens||[]).map(([b,d])=>`<div class="ins-i"><b>${esc(b)}</b>${d?' <em>· '+esc(d)+'</em>':''}</div>`).join('')}</div>`;
+      el.querySelector('.ins-h').addEventListener('click',()=>el.classList.toggle('aberto'));
+      gr.appendChild(el);
+    });
+    box.appendChild(card);
+  });
 }
 
 /* ===== semana ===== */
@@ -454,13 +474,13 @@ $$('[data-copy]').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.c
 /* ===== sem rolagem: compacta a aba ativa até caber na tela ===== */
 function ajustar(){
   const v=$('.view.active'); if(!v) return;
-  v.classList.remove('c1','c2','c3');
+  v.classList.remove('c1','c2','c3'); if(v.classList.contains('rola')) return;
   for(const c of ['c1','c2','c3']){ if(v.scrollHeight<=v.clientHeight+1) break; v.classList.add(c); }
 }
 window.addEventListener('resize',ajustar);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(ajustar);
 
-renderAulas(); renderSlides(); renderArquivos(); renderSemana(); ajustar();
+renderAulas(); renderTrilha(); renderInsights(); renderSemana(); ajustar();
 if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
 const abertoEm=Date.now();
 document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible'&&Date.now()-abertoEm>20*36e5) location.reload(); });
