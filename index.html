@@ -132,6 +132,8 @@
   .date.live{border-image-source:var(--bi-ochre)}
   .date.live .m,.date.live .d{color:var(--coffee)}
   .date.past{opacity:.55}
+  .feita{width:26px;height:26px;background:var(--ochre);color:var(--coffee);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .feita .icon{width:16px;height:16px;stroke-width:3}
 
   /* listas que ocupam a altura da tela, sem rolagem */
   .fill{flex:1 0 auto;display:flex;flex-direction:column;gap:9px}
@@ -458,7 +460,7 @@ function renderSemana(){
   const box=$('#agendaList'); box.innerHTML='';
   AULAS.forEach(a=>{const p=partes(a.data),live=a.data===hojeISO,past=a.data<hojeISO;
     const el=document.createElement('div'); el.className='ev';
-    el.innerHTML=`<div class="date ${live?'live':past?'past':''}"><div class="m">${p.mes}</div><div class="d">${p.dd}</div></div><div class="grow"><div class="title">${esc(a.titulo)}</div></div>${live?'<span class="pill hoje">hoje</span>':''}`;
+    el.innerHTML=`<div class="date ${live?'live':past?'past':''}"><div class="m">${p.mes}</div><div class="d">${p.dd}</div></div><div class="grow"><div class="title">${esc(a.titulo)}</div></div>${live?'<span class="pill hoje">hoje</span>':past?'<span class="feita" aria-label="aula dada"><svg class="icon"><use href="#i-check"/></svg></span>':''}`;
     box.appendChild(el);
   });
 }

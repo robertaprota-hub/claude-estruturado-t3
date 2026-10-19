@@ -37,7 +37,7 @@ window.AULAS = [
   { num: '01', data: '2026-10-13', titulo: 'Fundamentos de IA e Prompt',
     sub: 'Camadas da IA, ciclo 4D e prompt em cinco passos',
     gravacao: 'https://drive.google.com/file/d/1iF7Qo2KmpyKr2-1W4jQX6YSe5sgpEB29/view', slides: 'https://drive.google.com/file/d/1NO_jTaj8q1WsbQzsmwYwP_HZ6wBxlLqD/view', pasta: 'https://drive.google.com/drive/folders/17H4qBiyNABpN5uja6uW89o8OF-sNNMnY',
-    tarefa: 'Mapear 3 tarefas repetitivas da rotina: o que entra, o que sai e o tempo de hoje.',
+    tarefa: 'Mapear 3 tarefas repetitivas.',
     arquivos: [],
     trilha: [
       'Baixar o Claude no computador e no celular',
@@ -45,7 +45,7 @@ window.AULAS = [
       'Configurar a memória',
       'Escrever as instruções para o Claude: tom, premissas e incerteza',
       'Treinar prompts com os 5 passos',
-      'Mapear 3 tarefas repetitivas, com input, output e tempo'
+      'Mapear 3 tarefas repetitivas'
     ],
     insights: [
       { titulo: 'Os 5 passos do prompt', icone: 'i-list', num: true, itens: [
@@ -70,8 +70,8 @@ window.AULAS = [
       { titulo: '4 termos', icone: 'i-book', itens: [
         ['Token', 'pedaço de palavra; 200 mil = 500 páginas'],
         ['Contexto', 'tudo que o modelo vê na conversa'],
-        ['Prompt', 'a instrução; o resultado começa aqui'],
-        ['Memória', 'o que fica entre conversas, em .md'] ] },
+        ['Prompt', 'o pedido estruturado enviado ao Claude'],
+        ['Memória', 'o que o Claude guarda entre as conversas'] ] },
       { titulo: 'AI Fluency - 4D', icone: 'i-cycle', itens: [
         ['Delegation', 'delegar o repetitivo, não a decisão'],
         ['Description', 'pedir com os 5 passos'],
