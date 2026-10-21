@@ -87,7 +87,23 @@ window.AULAS = [
       'Conectar o e-mail ou o Drive ao Claude',
       'Agendar uma rotina',
       'Instalar o Claude no Excel, no Word e no PowerPoint'
-    ], insights: [] },
+    ], insights: [
+      { titulo: 'Markdown em 4 símbolos', icone: 'i-file', itens: [
+        ['#', 'título'],
+        ['##', 'seção'],
+        ['-', 'item de lista'],
+        ['**texto**', 'negrito'] ] },
+      { titulo: 'Projeto', icone: 'i-folder', itens: [
+        ['Instruções', 'papel, tom e formato fixos'],
+        ['Arquivos', 'o que o Claude consulta sempre'],
+        ['Um tema por projeto', 'PMO, não "tudo da empresa"'] ] },
+      { titulo: 'Conectores', icone: 'i-link', itens: [
+        ['O que são', 'agenda, Drive e e-mail ligados ao Claude'],
+        ['Limite', 'não envia e-mail sozinho'] ] },
+      { titulo: 'Rotinas agendadas', icone: 'i-cal', itens: [
+        ['Fórmula', 'prompt + frequência + projeto'],
+        ['Exemplo', 'toda segunda, 8h: status da semana'] ] }
+    ] },
 
   { num: '03', data: '2026-11-03', titulo: 'Artifacts e Skills',
     sub: 'Iterar em Artifacts e criar skills sem código',
