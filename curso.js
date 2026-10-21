@@ -81,7 +81,7 @@ window.AULAS = [
 
   { num: '02', data: '2026-10-20', titulo: 'Markdown, Projetos e Rotinas',
     sub: 'Contexto fixo em .md, projetos e rotinas agendadas',
-    gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/11hmpaooiLaaSd4AZa6Eb48xq3Q4wO-bT', tarefa: '', arquivos: [], trilha: [
+    gravacao: 'https://drive.google.com/file/d/1BqGAPSL8N5DUQJ7sDEn1ekVtMk7NHlTS/view', slides: 'https://drive.google.com/file/d/1s7ckuVI3ns2YyA8kIuscEw5PvNMIQsKu/view', pasta: 'https://drive.google.com/drive/folders/11hmpaooiLaaSd4AZa6Eb48xq3Q4wO-bT', tarefa: 'Criar um projeto para uma tarefa da sua rotina.', arquivos: [], trilha: [
       'Transformar um documento seu em .md',
       'Criar um projeto para uma tarefa repetitiva: instruções e arquivos',
       'Conectar o e-mail ou o Drive ao Claude',
