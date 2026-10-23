@@ -1,7 +1,7 @@
 /* Cache-first dos arquivos da raiz. O nome do cache traz a versão:
    toda publicação sobe o número (publicar.sh faz isso), senão o app
    instalado no celular continua servindo a versão antiga. */
-const CACHE = 'claude-estruturado-t3-v8';
+const CACHE = 'claude-estruturado-t3-v9';
 const ARQUIVOS = ['./', './index.html', './curso.js', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {

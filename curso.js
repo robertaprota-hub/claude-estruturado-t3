@@ -89,7 +89,7 @@ window.AULAS = [
       'Instalar o Claude no Excel, no Word e no PowerPoint'
     ], insights: [] },
 
-  { num: '03', data: '2026-10-27', titulo: 'Artifacts e Skills',
+  { num: '03', data: '2026-11-03', titulo: 'Artifacts e Skills',
     sub: 'Iterar em Artifacts e criar skills sem código',
     gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/1Xyr7UDyMOE0pEdtX2LtYXsLJRxFH4b4c', tarefa: '', arquivos: [], trilha: [
       'Criar um artifact',
@@ -98,7 +98,7 @@ window.AULAS = [
       'Testar a skill com /nome numa conversa'
     ], insights: [] },
 
-  { num: '04', data: '2026-11-03', titulo: 'Claude no Office',
+  { num: '04', data: '2026-11-10', titulo: 'Claude no Office',
     sub: 'Claude no Excel, no Word e no PowerPoint',
     gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/1O0QbA6JWt30_PFCWOn1JR9kZopS_3IUu', tarefa: '', arquivos: [], trilha: [
       'Rodar /verificar numa cópia de uma planilha sua',
