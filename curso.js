@@ -112,7 +112,29 @@ window.AULAS = [
       'Instalar uma skill pronta',
       'Criar uma skill',
       'Testar a skill com /nome numa conversa'
-    ], insights: [] },
+    ], insights: [
+      { titulo: 'Artifact', icone: 'i-slides', itens: [
+        ['O que é', 'painel ao lado da conversa'],
+        ['Rascunho', 'ajustar no painel, depois gerar o arquivo'],
+        ['Compartilhar', 'o painel vira um link'] ] },
+      { titulo: 'Projeto ou skill', icone: 'i-layers', itens: [
+        ['Projeto', 'contexto de um tema, vale dentro dele'],
+        ['Skill', 'jeito de fazer uma tarefa, vale em qualquer conversa'],
+        ['Regra', 'tarefa que se repete sempre igual vira skill'] ] },
+      { titulo: 'O prompt da skill em 4 partes', icone: 'i-prompt', num: true, itens: [
+        ['Nome e objetivo', 'o que a skill faz'],
+        ['Tarefas e regras', 'passo a passo, tom e limites'],
+        ['Perguntas', 'o Claude pergunta antes de construir'],
+        ['Teste', 'caso real e o arquivo .skill no fim'] ] },
+      { titulo: 'Ter e usar uma skill', icone: 'i-skill', num: true, itens: [
+        ['Obter', 'prompt, skills.sh ou .zip da equipe'],
+        ['Ler', 'conferir o SKILL.md antes de instalar'],
+        ['Instalar', 'Personalizar › Skills'],
+        ['Chamar', '/nome numa conversa'] ] },
+      { titulo: 'Skill e agente', icone: 'i-cycle', itens: [
+        ['Skill', 'uma tarefa, quando a pessoa chama'],
+        ['Agente', 'várias etapas, usa skills para trabalhar'] ] }
+    ] },
 
   { num: '04', data: '2026-11-10', titulo: 'Claude no Office',
     sub: 'Claude no Excel, no Word e no PowerPoint',
