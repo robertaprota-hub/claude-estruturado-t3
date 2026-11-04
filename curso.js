@@ -91,7 +91,7 @@ window.AULAS = [
 
   { num: '03', data: '2026-11-03', titulo: 'Artifacts e Skills',
     sub: 'Iterar em Artifacts e criar skills sem código',
-    gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/1Xyr7UDyMOE0pEdtX2LtYXsLJRxFH4b4c', tarefa: '', arquivos: [], trilha: [
+    gravacao: 'https://drive.google.com/file/d/1piqe9pk4g36yC2QsZgNW0JRnKxIxSkPh/view', slides: 'https://drive.google.com/file/d/1lgxnTicYRuMZmtST9Ya1unMceezXh47q/view', pasta: 'https://drive.google.com/drive/folders/1Xyr7UDyMOE0pEdtX2LtYXsLJRxFH4b4c', tarefa: 'Criar a skill de um processo da área.', arquivos: [], trilha: [
       'Criar um artifact',
       'Instalar uma skill pronta',
       'Criar uma skill',
