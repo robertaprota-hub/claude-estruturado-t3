@@ -1,6 +1,6 @@
 /* Cache só para uso sem internet. O nome do cache traz a versão:
    toda publicação sobe o número (publicar.sh faz isso). */
-const CACHE = 'claude-estruturado-t3-v13';
+const CACHE = 'claude-estruturado-t3-v14';
 const ARQUIVOS = ['./', './index.html', './curso.js', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {
