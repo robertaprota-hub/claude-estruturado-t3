@@ -138,7 +138,7 @@ window.AULAS = [
 
   { num: '04', data: '2026-11-10', titulo: 'Claude no Office',
     sub: 'Claude no Excel, no Word e no PowerPoint',
-    gravacao: '', slides: '', pasta: 'https://drive.google.com/drive/folders/1O0QbA6JWt30_PFCWOn1JR9kZopS_3IUu', tarefa: '', arquivos: [], trilha: [
+    gravacao: 'https://drive.google.com/file/d/1v2hOU32Wvfsk-llkZ8GLA48zG0S-DyTL/view', slides: 'https://drive.google.com/file/d/1XqLIhcQuG8JH7nOaGYvwN2LH27QGvwiK/view', pasta: 'https://drive.google.com/drive/folders/1O0QbA6JWt30_PFCWOn1JR9kZopS_3IUu', tarefa: '', arquivos: [], trilha: [
       'Rodar /verificar numa cópia de uma planilha sua',
       'Fazer o /fup de um arquivo e levar para um slide',
       'Criar um documento no Claude Docs ou uma apresentação no Claude Slides',
