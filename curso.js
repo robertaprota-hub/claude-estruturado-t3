@@ -138,10 +138,34 @@ window.AULAS = [
 
   { num: '04', data: '2026-11-10', titulo: 'Claude no Office',
     sub: 'Claude no Excel, no Word e no PowerPoint',
-    gravacao: 'https://drive.google.com/file/d/1v2hOU32Wvfsk-llkZ8GLA48zG0S-DyTL/view', slides: 'https://drive.google.com/file/d/1XqLIhcQuG8JH7nOaGYvwN2LH27QGvwiK/view', pasta: 'https://drive.google.com/drive/folders/1O0QbA6JWt30_PFCWOn1JR9kZopS_3IUu', tarefa: '', arquivos: [], trilha: [
+    gravacao: 'https://drive.google.com/file/d/1v2hOU32Wvfsk-llkZ8GLA48zG0S-DyTL/view', slides: 'https://drive.google.com/file/d/1XqLIhcQuG8JH7nOaGYvwN2LH27QGvwiK/view', pasta: 'https://drive.google.com/drive/folders/1O0QbA6JWt30_PFCWOn1JR9kZopS_3IUu', tarefa: 'Usar /fup num arquivo real do trabalho.', arquivos: [], trilha: [
+      'Instalar as skills fup, verificar e revisar',
       'Rodar /verificar numa cópia de uma planilha sua',
       'Fazer o /fup de um arquivo e levar para um slide',
       'Criar um documento no Claude Docs ou uma apresentação no Claude Slides',
       'Responder o feedback do curso'
-    ], insights: [] }
+    ], insights: [
+      { titulo: 'FUP em 5 blocos', icone: 'i-list', num: true, itens: [
+        ['Cabeçalho', 'assunto, projeto ou área e data'],
+        ['Situação', 'uma frase e os números, com a origem'],
+        ['Pontos de atenção', 'até 3, cada um com o efeito'],
+        ['Ações', 'o quê, quem e prazo'],
+        ['Decisão pedida', 'o que decidir e quem decide'] ] },
+      { titulo: 'Claude no Office', icone: 'i-layers', itens: [
+        ['Excel', 'lê todas as abas e cita a célula'],
+        ['Word', 'edita em alterações controladas'],
+        ['PowerPoint', 'monta slides no modelo da empresa'],
+        ['Outlook', 'resume e-mails e rascunha a resposta'] ] },
+      { titulo: 'Skills no Office', icone: 'i-skill', itens: [
+        ['/fup', 'o arquivo em uma página'],
+        ['/verificar', 'o que conferir na planilha, sem corrigir'],
+        ['/revisar', 'corrige a escrita, só comenta os dados'] ] },
+      { titulo: '3 regras de uso', icone: 'i-check', num: true, itens: [
+        ['Cópia', 'trabalhar na cópia do arquivo'],
+        ['Dado pessoal', 'apagar CPF antes de abrir o suplemento'],
+        ['Conferência', 'células alteradas e total com a base'] ] },
+      { titulo: 'Docs e Slides ou suplemento', icone: 'i-file', itens: [
+        ['Docs e Slides', 'começar do zero, na conversa'],
+        ['Suplemento', 'trabalhar no arquivo que já existe'] ] }
+    ] }
 ];
