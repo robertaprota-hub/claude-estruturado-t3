@@ -488,7 +488,11 @@ window.addEventListener('resize',ajustar);
 if(document.fonts&&document.fonts.ready) document.fonts.ready.then(ajustar);
 
 renderAulas(); renderTrilha(); renderInsights(); renderSemana(); ajustar();
-if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+if('serviceWorker' in navigator){
+  const tinha=!!navigator.serviceWorker.controller; let recarregou=false;
+  navigator.serviceWorker.addEventListener('controllerchange',()=>{ if(tinha&&!recarregou){ recarregou=true; location.reload(); } });
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
 const abertoEm=Date.now();
 document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible'&&Date.now()-abertoEm>20*36e5) location.reload(); });
 </script>
